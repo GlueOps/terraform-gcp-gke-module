@@ -1,6 +1,8 @@
-
-
 variable "workspace" {}
+
+data "google_projects" "env_project" {
+  filter = "lifecycleState:ACTIVE labels.environment=${var.workspace} parent.type:folder parent.id:${var.gcp_folder_id}"
+}
 
 variable "region" {
   type        = string
