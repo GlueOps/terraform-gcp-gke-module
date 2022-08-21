@@ -1,5 +1,6 @@
 locals {
-  project_id = data.google_projects.env_project.projects[0].project_id
+  project_id       = data.google_projects.env_project.projects[0].project_id
+  gke_network_tags = ["gke-${var.workspace}"]
 }
 
 variable "workspace" {}
@@ -32,12 +33,6 @@ variable "kubernetes_version_prefix" {
   type        = string
   default     = "1.22.8-gke.200"
   description = "Number of IPs we should manually allocate for Cloud NAT"
-}
-
-variable "gke_network_tags" {
-  type        = list(string)
-  default     = ["gke-${var.workspace}"]
-  description = "Network Tags for GKE"
 }
 
 
