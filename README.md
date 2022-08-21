@@ -9,7 +9,7 @@ locals {
   gcp_folder_id = "XXXXXXXXXXXX"
 }
 
-module "vpc" {
+module "gke" {
   source = "git::https://github.com/GlueOps/terraform-gcp-gke-module.git"
 
   workspace     = var.workspace
