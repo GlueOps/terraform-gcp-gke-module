@@ -20,7 +20,7 @@ data "google_compute_network" "network" {
 }
 
 data "google_compute_subnetwork" "private-network" {
-  name    = "${var.workspace}-${local.region}-private-subnet"
-  region  = local.region
+  name    = "${var.workspace}-${var.region}-private-subnet"
+  region  = var.region
   project = data.google_projects.env_project.projects[0].project_id
 }
