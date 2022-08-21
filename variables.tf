@@ -31,7 +31,7 @@ variable "control_panel_network" {
 
 variable "kubernetes_version_prefix" {
   type        = string
-  default     = "1.22.8-gke.200"
+  default     = "1.22.11-gke.400"
   description = "Number of IPs we should manually allocate for Cloud NAT"
 }
 
