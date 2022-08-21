@@ -9,8 +9,8 @@ resource "google_compute_firewall" "nginx" {
     protocol = "tcp"
     ports    = ["8443"]
   }
-  source_ranges = [local.control_panel_network]
-  target_tags   = local.gke_network_tags
+  source_ranges = [var.control_panel_network]
+  target_tags   = var.gke_network_tags
 }
 
 

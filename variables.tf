@@ -34,6 +34,15 @@ variable "kubernetes_version_prefix" {
   description = "Number of IPs we should manually allocate for Cloud NAT"
 }
 
+variable "gke_network_tags" {
+  type        = list(string)
+  default     = ["gke-${var.workspace}"]
+  description = "Network Tags for GKE"
+}
+
+
+
+
 
 
 # data "google_container_engine_versions" "central1b" {

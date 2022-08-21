@@ -18,6 +18,6 @@ resource "google_container_node_pool" "name" {
     disk_size_gb = "20"
 
     service_account = module.service-account.email
-    tags            = local.gke_network_tags
+    tags            = var.gke_network_tags
   }
 }
