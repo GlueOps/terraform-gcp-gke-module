@@ -1,3 +1,7 @@
+locals {
+  project_id = data.google_projects.env_project.projects[0].project_id
+}
+
 variable "workspace" {}
 
 data "google_projects" "env_project" {
