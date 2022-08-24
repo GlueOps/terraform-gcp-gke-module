@@ -33,6 +33,8 @@ resource "google_container_cluster" "gke" {
   node_config {
     service_account = module.service-account.email
     tags            = ["gke-${var.workspace}"]
+    spot            = var.spot_instances
+ 
   }
 
 

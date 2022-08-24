@@ -12,7 +12,7 @@ resource "google_container_node_pool" "name" {
   }
 
   node_config {
-    preemptible  = false
+    spot         = var.spot_instances
     machine_type = "e2-medium"
     disk_type    = "pd-ssd"
     disk_size_gb = "20"

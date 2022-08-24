@@ -41,6 +41,12 @@ variable "run_masters_in_single_zone" {
   description = "If true, the zone A will be used and the master nodes will not be highly available" 
 }
 
+variable "spot_instances" {
+  type        = bool
+  default     = false
+  description = "If true, spot instances will be used across all worker nodes" 
+}
+
 # data "google_container_engine_versions" "central1b" {
 #   provider       = google-beta
 #   location       = var.region
