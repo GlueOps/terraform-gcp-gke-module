@@ -3,7 +3,7 @@ resource "google_container_cluster" "gke" {
   project = local.project_id
   name    = "${var.workspace}-gke"
 
-  location                    = var.run_masters_in_single_zone ? "${format("%s%s", var.region, "-a")} : var.region
+  location                    = var.run_masters_in_single_zone ? format("%s%s", var.region, "-a")} : var.region
   min_master_version          = var.kubernetes_version_prefix
   remove_default_node_pool    = true
   initial_node_count          = 1
