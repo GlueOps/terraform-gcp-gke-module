@@ -35,10 +35,11 @@ variable "kubernetes_version_prefix" {
   description = "Number of IPs we should manually allocate for Cloud NAT"
 }
 
-
-
-
-
+variable "run_masters_in_single_zone" {
+  type        = bool
+  default     = false
+  description = "If true, the zone A will be used and the master nodes will not be highly available" 
+}
 
 # data "google_container_engine_versions" "central1b" {
 #   provider       = google-beta
