@@ -13,6 +13,19 @@ resource "google_compute_firewall" "nginx" {
   target_tags   = local.gke_network_tags
 }
 
+resource "google_compute_firewall" "vault" {
+  project     = local.project_id
+  name        = "vault"
+  network     = data.google_compute_network.network.name
+  description = "Creates firewall rule needed by vault"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["8080"]
+  }
+  source_ranges = [var.control_panel_network]
+  target_tags   = local.gke_network_tags
+}
 
 data "google_compute_network" "network" {
   name    = "${var.workspace}-vpc"
