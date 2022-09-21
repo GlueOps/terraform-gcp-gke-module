@@ -31,20 +31,20 @@ variable "control_panel_network" {
 
 variable "kubernetes_version_prefix" {
   type        = string
-  default     = "1.22.11-gke.400"
+  default     = "1.22.12-gke.1200"
   description = "Number of IPs we should manually allocate for Cloud NAT"
 }
 
 variable "run_masters_in_single_zone" {
   type        = bool
   default     = false
-  description = "If true, the zone A will be used and the master nodes will not be highly available" 
+  description = "If true, the zone A will be used and the master nodes will not be highly available"
 }
 
 variable "spot_instances" {
   type        = bool
   default     = false
-  description = "If true, spot instances will be used across all worker nodes" 
+  description = "If true, spot instances will be used across all worker nodes"
 }
 
 # data "google_container_engine_versions" "central1b" {
